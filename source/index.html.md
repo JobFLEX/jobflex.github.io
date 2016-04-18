@@ -2,9 +2,10 @@
 title: API Reference
 
 language_tabs:
-  - shell
-  - ruby
-  - python
+  - php
+  - java
+  - objective_c
+  - json
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -165,4 +166,3 @@ This endpoint retrieves a specific kitten.
 Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to retrieve
-
