@@ -4,7 +4,7 @@
 - Is your version of Slate out of date? We have [upgrade instructions](https://github.com/tripit/slate/wiki/Updating-Slate) in the wiki. You could also try seeing if your problem is reproducible on the latest version of Slate.
 
 If you answered "no" to each of the questions above, feel free to submit an issue! It's also helpful if you include a code example of your problem (if applicable), we can't help you if you just say "Slate stopped loading for me once I added my documentation" without telling us the problematic documentation.
-
+ 
 # Before You Submit a Pull Request
 
 Thanks for contributing to Slate! A couple of quick guidelines for submitting pull requests:
