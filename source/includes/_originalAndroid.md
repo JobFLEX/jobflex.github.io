@@ -85,5 +85,99 @@ OrgAccountType | 9
 Referral | $Referral
 
 
+After doing the insert into Contractor Info it then inserts into User
+
+
+` Table Users `
+
+Field       | Value
+------------| ----------
+EntityMaster | 1
+MasterTable | ContractorInfo
+MasterID | $id
+Rights | 5
+Function | 'Admin'
+ServiceRadius | 45
+FirstName | $ContContactFirst
+LastName | $ContContactLast
+Phone | $str (555-555-5555)
+Email | $ContEmail
+Md5Pass | $Password
+4CharPass | $Password-4
+Active | 1 
+DateCreated | date('Y-m-d H:i:s')
+IsTrial | $IsTrial
+MainUser | 1
+PrimaryUser | 1
+IsSalesPerson | 2
+ControlPanelAccess | 1
+ManageUsersAccess | 1 
+CompanySetupAccess | 1 
+TermsCondAccess | 1
+SchedulingAccess | 1
+CustomerMgtAccess | 1
+FileDirectoryAccess | 1
+ImpExpAccess | 1
+MaterialsListAccess | 1
+OverRideAccess | 1 
+ServiceHeaderAccess | 1
+TaxesAccess | 1
+ReportsAccess | 1
+FinancingAccess | 1
+PhotoDescAccess | 1
+EmailVerif | 1
+
+
+
+And then it inserts into this next table
+
+` ContractorTabletSetup
+
+
+Field       | Value
+------------| --------
+IntContNum | $id
+ContBusName | $ContBusName
+ContPhone | $str 
+ContEmail | $ContEmail
+UserID | $userid
+LogoBlob | /Uploads/logo-placeholder-01.png
+
+
+<aside class="notice"> 
+It also insert's these other sample data
+</aside>
+
+``` php 
+$sqpc = "insert into ProgramCal (IntContNum, Utility_Service_Description) values
+				('".$id."', 'Sample Roofing Heading'),
+				('".$id."', 'Sample Flooring Heading'),
+				('".$id."', 'Sample Landscaping Heading')";
+	$qupc = mysql_query($sqpc) or die(mysql_error());
+
+	$sqpc = "insert into ContractorPhotoDesc (IntContNum, Title, Description) values
+				('".$id."', 'Sample - Condition','This is the existing condition of your ______'),
+				('".$id."', 'Sample - Options','These are the available options to choose from')";
+	$qupc = mysql_query($sqpc) or die(mysql_error());
+
+
+	$sqctc = "Insert into  ContractorTermsConditions (IntContNum, TermsNote, TermCode) values ('".$id."', (select `Value` from DefaultFields where `Name` = 'Terms'), 'QuotationTerms')";
+	$quctc = mysql_query($sqctc) or die(mysql_error());
+
+	// sales/service/audit inspection types
+	$sql = "insert into LeadServicesCat (ServicesCat,IntContNum,CustType,InspectionType,InspectionDesc,NewCat) values
+		('Service','" . $id . "',1,1,'Service',1),
+		('Sales','" . $id . "',0,0,'Sales',1),
+		('Audit','" . $id . "',2,2,'Audit',1)";
+	mysql_query($sql);
+    
+    
+    ```
+
+
+
+
+
+
 
 
