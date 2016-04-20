@@ -8,7 +8,7 @@
 This method used to sign users up from the app.
 
 ### HTTP REQUEST
-`POST cloudmanagerpro.com/AndroidGP/signup.php`
+`POST cloudmanagerpro.com/AndroidGP/signup.php?year=johntestestemail%40jobflex.com%7CJF%7Cjobflex12345%7CJF%7CDrywall%7CJF%7C%7CJF%7CNocompany%7CJF%7C%7CJF%7C&SID=unknown`
 
 
 
@@ -29,7 +29,7 @@ CLIncre | Industry number check note below.
 
 > Example legacy import
 
-``` 
+``` php
 $sql = "select * from ItemAccountPackages where Packages_ID = '9'";
 	$query = mysql_query($sql);
 	$packagerows = mysql_fetch_assoc($query);
