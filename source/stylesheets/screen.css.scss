@@ -46,6 +46,13 @@ html, body {
   width: 20px;
 }
 
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: -o-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
 @mixin embossed-bg {
   background:
     linear-gradient(to bottom, rgba(#000, 0.2), rgba(#000, 0) 8px),
@@ -54,6 +61,7 @@ html, body {
     linear-gradient(to top, rgba($nav-embossed-border-bottom, 1), rgba($nav-embossed-border-bottom, 0) 1.5px),
     $nav-subitem-bg;
 }
+
 
 .tocify-wrapper {
   transition: left 0.3s ease-in-out;
@@ -406,8 +414,13 @@ html, body {
   }
 
   table {
-    margin-bottom: 1em;
-    overflow: auto;
+      margin-bottom: 1em;
+     overflow: none;
+     display: table;
+     margin-left: 10px;
+     margin-right:10px;
+    width: calc(#{$table-width} - 28px);
+
     th,td {
       text-align: left;
       vertical-align: top;
@@ -475,6 +488,7 @@ html, body {
     margin-bottom: 1.5em;
     background: $aside-notice-bg;
     line-height: 1.6;
+    color: $aside-warning-color;
 
     &.warning {
       background-color: $aside-warning-bg;

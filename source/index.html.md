@@ -3,11 +3,11 @@ title: API Reference
 
 
 # Hiding language tabs for now since code will be specific to item.
-#language_tabs:
-#  - php
-#  - java
-#  - objective_c
-#  - json
+language_tabs:
+  - php
+  - java
+  - objective_c
+  - json
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -22,4 +22,4 @@ search: true
 
 # Introduction
 
-Welcome to the JobFLEX API Documentation. We will be posting here all the information we have to allow developers to easily find and access what they need. 
+Welcome to the JobFLEX API Documentation. We will be posting here all the information we have to allow developers to easily find and access what they need.
