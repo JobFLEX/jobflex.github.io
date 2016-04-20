@@ -1,14 +1,13 @@
 ---
 title: API Reference
 
-
-# Hiding language tabs for now since code will be specific to item.
 language_tabs:
   - php
   - java
   - objective_c
   - json
-
+  
+  
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>

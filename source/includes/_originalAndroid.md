@@ -148,7 +148,11 @@ LogoBlob | /Uploads/logo-placeholder-01.png
 It also insert's these other sample data
 </aside>
 
-``` php 
+```
+
+public void lookup() {
+}
+
 $sqpc = "insert into ProgramCal (IntContNum, Utility_Service_Description) values
 				('".$id."', 'Sample Roofing Heading'),
 				('".$id."', 'Sample Flooring Heading'),
@@ -170,9 +174,7 @@ $sqpc = "insert into ProgramCal (IntContNum, Utility_Service_Description) values
 		('Sales','" . $id . "',0,0,'Sales',1),
 		('Audit','" . $id . "',2,2,'Audit',1)";
 	mysql_query($sql);
-    
-    
-    ```
+   ```
 
 
 
