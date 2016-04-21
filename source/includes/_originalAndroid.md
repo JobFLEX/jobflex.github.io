@@ -54,7 +54,7 @@ $sql = "select * from ItemAccountPackages where Packages_ID = '9'";
 ```
 
 
-``` table: ContractorInfo ```
+``` table: ContractorInfo  ```
 
 Field    | Value 
 -------- | ------------
