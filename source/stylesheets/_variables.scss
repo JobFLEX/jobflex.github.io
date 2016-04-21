@@ -56,9 +56,9 @@ $aside-warning-color: #fff; // Color used in warning spot
 // SIZES
 ////////////////////
 $nav-width: 230px; // width of the navbar
-$examples-width: 40%; // portion of the screen taken up by code examples
+$examples-width: 0%; // portion of the screen taken up by code examples
 $table-padding: 28px;
-$table-width: 100% - $examples-width;
+$table-width: 100%;
 $logo-margin: 25px; // margin between nav items and logo, ignored if search is active
 $main-padding: 28px; // padding to left and right of content & examples
 $nav-padding: 15px; // padding to left and right of navbar

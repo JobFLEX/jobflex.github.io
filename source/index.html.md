@@ -1,12 +1,7 @@
 ---
 title: API Reference
 
-language_tabs:
-  - php
-  - java
-  - objective_c
-  - json
-  
+
   
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
