@@ -9,4 +9,4 @@ gem "middleman-sprockets", "~> 4.0.0.rc"
 gem 'rouge', '~> 1.10.1'
 gem "middleman-livereload", "~> 3.4.3"
 gem 'redcarpet', '~> 3.3.2'
-gem "middleman-deploy", "~> 2.0.0.pre.alpha"
+gem 'middleman-deploy', github: 'middleman-contrib/middleman-deploy', branch: 'master'

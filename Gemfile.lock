@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/middleman-contrib/middleman-deploy.git
+  revision: 243ab38b08896cd5a37d6845a01a5761b934a898
+  branch: master
+  specs:
+    middleman-deploy (2.0.0.pre.alpha)
+      middleman-core (>= 3.2)
+      net-sftp
+      ptools
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -78,10 +88,6 @@ GEM
       sass (>= 3.4)
       tilt (~> 1.4.1)
       uglifier (~> 2.6)
-    middleman-deploy (2.0.0.pre.alpha)
-      middleman-core (>= 3.2)
-      net-sftp
-      ptools
     middleman-gh-pages (0.0.3)
       rake (> 0.9.3)
     middleman-livereload (3.4.6)
@@ -142,7 +148,7 @@ PLATFORMS
 DEPENDENCIES
   middleman (~> 4.0.0)
   middleman-autoprefixer (~> 2.7.0)
-  middleman-deploy (~> 2.0.0.pre.alpha)
+  middleman-deploy!
   middleman-gh-pages (~> 0.0.3)
   middleman-livereload (~> 3.4.3)
   middleman-sprockets (~> 4.0.0.rc)
