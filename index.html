@@ -1,0 +1,931 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #f8f8f2;
+  background-color: #272822;
+}
+.highlight .err {
+  color: #151515;
+  background-color: #ac4142;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #505050;
+}
+.highlight .cp {
+  color: #f4bf75;
+}
+.highlight .nt {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #d0d0d0;
+}
+.highlight .p, .highlight .pi {
+  color: #d0d0d0;
+}
+.highlight .gi {
+  color: #90a959;
+}
+.highlight .gd {
+  color: #ac4142;
+}
+.highlight .gh {
+  color: #6a9fb5;
+  background-color: #151515;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #aa759f;
+}
+.highlight .kc {
+  color: #d28445;
+}
+.highlight .kt {
+  color: #d28445;
+}
+.highlight .kd {
+  color: #d28445;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #90a959;
+}
+.highlight .sr {
+  color: #75b5aa;
+}
+.highlight .si {
+  color: #8f5536;
+}
+.highlight .se {
+  color: #8f5536;
+}
+.highlight .nn {
+  color: #f4bf75;
+}
+.highlight .nc {
+  color: #f4bf75;
+}
+.highlight .no {
+  color: #f4bf75;
+}
+.highlight .na {
+  color: #6a9fb5;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #90a959;
+}
+.highlight .ss {
+  color: #90a959;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png" />
+        <div class="lang-selector">
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+        <ul class="toc-footer">
+            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="introduction">Introduction</h1>
+
+<p>Welcome to the JobFLEX API Documentation. We will be posting here all the information we have to allow developers to easily find and access what they need.</p>
+
+          <h1 id="legacy-android-api">Legacy Android API</h1>
+
+<aside class="notice">These methods are no longer working by the time of this deployment. This is for past reference only, please do not use anything here.</aside>
+
+<h2 id="sign-up">Sign Up</h2>
+
+<p>This method used to sign users up from the app.</p>
+
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST cloudmanagerpro.com/AndroidGP/signup.php?year=johntestestemail%40jobflex.com%7CJF%7Cjobflex12345%7CJF%7CDrywall%7CJF%7C%7CJF%7CNocompany%7CJF%7C%7CJF%7C&amp;SID=unknown</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>year</td>
+<td>This being exploded into the parameters below</td>
+</tr>
+<tr>
+<td>ContEmail</td>
+<td>Contractor/User email address.</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>Contractor/User password.</td>
+</tr>
+<tr>
+<td>ContBusName</td>
+<td>Name of the business.</td>
+</tr>
+<tr>
+<td>Referral</td>
+<td>Refferal Source.</td>
+</tr>
+<tr>
+<td>SID</td>
+<td>Device serial number.</td>
+</tr>
+<tr>
+<td>CLIncre</td>
+<td>Industry number check note below.</td>
+</tr>
+</tbody></table>
+
+<h3 id="inserted-into-table">Inserted Into Table</h3>
+
+<blockquote>
+<p>Example legacy import</p>
+</blockquote>
+<pre class="highlight php"><code>$sql = "select * from ItemAccountPackages where Packages_ID = '9'";
+    $query = mysql_query($sql);
+    $packagerows = mysql_fetch_assoc($query);
+
+    $sqlcont = "insert into ContractorInfo (NextQuoteNum, NextJobNum,
+    EntityMaster, Sched, ContBusNam, ContContactFirst, ContContactLast, ServiceRadius,
+    ContMobile, ContEmail,  ContDateCreated, OrgCreateDate, ContDateChanged, CreatedBy,
+    Active, IsTrial, MaxTabletUse, MaxFileSizeUse, MaxMemoryUse, BaseMemoryUse,
+    CLIncre,Title,AccountType, OrgAccountType,Referral)
+    values ('1','1','1', '1','".htmlentities($_POST['ContBusName'],ENT_QUOTES)."','"
+    .htmlentities($_POST['ContContactFirst'],ENT_QUOTES)."', '"
+    .htmlentities($_POST['ContContactLast'],ENT_QUOTES)."', '25', '555-555-5555', '"
+    .str_replace("'","\'",$_POST['ContEmail'])."', '"
+    .date('Y-m-d H:i:s')."', '".date('Y-m-d H:i:s')."', '"
+    .date('Y-m-d')."', '"
+    .htmlentities($_POST['ContContactFirst'],ENT_QUOTES)." "
+    .htmlentities($_POST['ContContactLast'],ENT_QUOTES)."',
+     '1', '0', '0', '150000','"
+    . ($packagerows['Starting_Memory'] * 1073741824) ."', '". ($packagerows['Starting_Memory'] * 1073741824)
+    ."', '".$_POST['CLIncre']."','" . htmlentities($_REQUEST['title'],ENT_QUOTES) . "','9','9','"
+    . htmlentities($_POST['Referral'],ENT_QUOTES) . "')";
+</code></pre>
+
+<p><code class="prettyprint">table: ContractorInfo</code></p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>NextQuoteNum</td>
+<td>defaults to 1</td>
+</tr>
+<tr>
+<td>NextJobNum</td>
+<td>defaults to 1</td>
+</tr>
+<tr>
+<td>EntityMaster</td>
+<td>defaults to 1</td>
+</tr>
+<tr>
+<td>Sched</td>
+<td>defaults to 1</td>
+</tr>
+<tr>
+<td>ContBusNam</td>
+<td>$ContBusName</td>
+</tr>
+<tr>
+<td>ContContactFirst</td>
+<td>$ContContactFirst</td>
+</tr>
+<tr>
+<td>ContContactLast</td>
+<td>$ContContactLast</td>
+</tr>
+<tr>
+<td>ServiceRadius</td>
+<td>defaulting to 25.</td>
+</tr>
+<tr>
+<td>ContMobile</td>
+<td>defaulting to 555-555-5555</td>
+</tr>
+<tr>
+<td>ContEmail</td>
+<td>ContEmail</td>
+</tr>
+<tr>
+<td>ContDateCreated</td>
+<td>date(&lsquo;Y-m-d H:i:s&rsquo;)</td>
+</tr>
+<tr>
+<td>OrgCreateDate</td>
+<td>date(&#39;Y-m-d H:i:s&rsquo;)</td>
+</tr>
+<tr>
+<td>ContDateChanged</td>
+<td>date(&#39;Y-m-d&rsquo;)</td>
+</tr>
+<tr>
+<td>CreatedBy</td>
+<td>$ContContactFirst + $ContContactLast</td>
+</tr>
+<tr>
+<td>Active</td>
+<td>1</td>
+</tr>
+<tr>
+<td>IsTrial</td>
+<td>0</td>
+</tr>
+<tr>
+<td>MaxTabletUse</td>
+<td>0</td>
+</tr>
+<tr>
+<td>MaxFileSizeUse</td>
+<td>150000</td>
+</tr>
+<tr>
+<td>MaxMemoryUse</td>
+<td>$packagerows[&#39;Starting_Memory&rsquo;] * 1073741824</td>
+</tr>
+<tr>
+<td>BaseMemoryUse</td>
+<td>$packagerows[&#39;Starting_Memory&rsquo;] * 1073741824</td>
+</tr>
+<tr>
+<td>CLIncre</td>
+<td>$CLIncre</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>$title</td>
+</tr>
+<tr>
+<td>AccountType</td>
+<td>9</td>
+</tr>
+<tr>
+<td>OrgAccountType</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Referral</td>
+<td>$Referral</td>
+</tr>
+</tbody></table>
+
+<p>After doing the insert into Contractor Info it then inserts into User</p>
+
+<p><code class="prettyprint">Table Users</code></p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>EntityMaster</td>
+<td>1</td>
+</tr>
+<tr>
+<td>MasterTable</td>
+<td>ContractorInfo</td>
+</tr>
+<tr>
+<td>MasterID</td>
+<td>$id</td>
+</tr>
+<tr>
+<td>Rights</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Function</td>
+<td>&#39;Admin&rsquo;</td>
+</tr>
+<tr>
+<td>ServiceRadius</td>
+<td>45</td>
+</tr>
+<tr>
+<td>FirstName</td>
+<td>$ContContactFirst</td>
+</tr>
+<tr>
+<td>LastName</td>
+<td>$ContContactLast</td>
+</tr>
+<tr>
+<td>Phone</td>
+<td>$str (555-555-5555)</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>$ContEmail</td>
+</tr>
+<tr>
+<td>Md5Pass</td>
+<td>$Password</td>
+</tr>
+<tr>
+<td>4CharPass</td>
+<td>$Password-4</td>
+</tr>
+<tr>
+<td>Active</td>
+<td>1</td>
+</tr>
+<tr>
+<td>DateCreated</td>
+<td>date(&#39;Y-m-d H:i:s&rsquo;)</td>
+</tr>
+<tr>
+<td>IsTrial</td>
+<td>$IsTrial</td>
+</tr>
+<tr>
+<td>MainUser</td>
+<td>1</td>
+</tr>
+<tr>
+<td>PrimaryUser</td>
+<td>1</td>
+</tr>
+<tr>
+<td>IsSalesPerson</td>
+<td>2</td>
+</tr>
+<tr>
+<td>ControlPanelAccess</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ManageUsersAccess</td>
+<td>1</td>
+</tr>
+<tr>
+<td>CompanySetupAccess</td>
+<td>1</td>
+</tr>
+<tr>
+<td>TermsCondAccess</td>
+<td>1</td>
+</tr>
+<tr>
+<td>SchedulingAccess</td>
+<td>1</td>
+</tr>
+<tr>
+<td>CustomerMgtAccess</td>
+<td>1</td>
+</tr>
+<tr>
+<td>FileDirectoryAccess</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ImpExpAccess</td>
+<td>1</td>
+</tr>
+<tr>
+<td>MaterialsListAccess</td>
+<td>1</td>
+</tr>
+<tr>
+<td>OverRideAccess</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ServiceHeaderAccess</td>
+<td>1</td>
+</tr>
+<tr>
+<td>TaxesAccess</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ReportsAccess</td>
+<td>1</td>
+</tr>
+<tr>
+<td>FinancingAccess</td>
+<td>1</td>
+</tr>
+<tr>
+<td>PhotoDescAccess</td>
+<td>1</td>
+</tr>
+<tr>
+<td>EmailVerif</td>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<p>And then it inserts into this next table</p>
+
+<p><code class="prettyprint">ContractorTabletSetup</code></p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>IntContNum</td>
+<td>$id</td>
+</tr>
+<tr>
+<td>ContBusName</td>
+<td>$ContBusName</td>
+</tr>
+<tr>
+<td>ContPhone</td>
+<td>$str</td>
+</tr>
+<tr>
+<td>ContEmail</td>
+<td>$ContEmail</td>
+</tr>
+<tr>
+<td>UserID</td>
+<td>$userid</td>
+</tr>
+<tr>
+<td>LogoBlob</td>
+<td>/Uploads/logo-placeholder-01.png</td>
+</tr>
+</tbody></table>
+
+<aside class="notice"> 
+It also insert&rsquo;s these other sample data
+</aside>
+<pre class="highlight plaintext"><code>
+$sqpc = "insert into ProgramCal (IntContNum, Utility_Service_Description) values
+                ('".$id."', 'Sample Roofing Heading'),
+                ('".$id."', 'Sample Flooring Heading'),
+                ('".$id."', 'Sample Landscaping Heading')";
+    $qupc = mysql_query($sqpc) or die(mysql_error());
+
+    $sqpc = "insert into ContractorPhotoDesc (IntContNum, Title, Description) values
+                ('".$id."', 'Sample - Condition','This is the existing condition of your ______'),
+                ('".$id."', 'Sample - Options','These are the available options to choose from')";
+    $qupc = mysql_query($sqpc) or die(mysql_error());
+
+
+    $sqctc = "Insert into  ContractorTermsConditions (IntContNum, TermsNote, TermCode) values ('".$id."', (select `Value` from DefaultFields where `Name` = 'Terms'), 'QuotationTerms')";
+    $quctc = mysql_query($sqctc) or die(mysql_error());
+
+    // sales/service/audit inspection types
+    $sql = "insert into LeadServicesCat (ServicesCat,IntContNum,CustType,InspectionType,InspectionDesc,NewCat) values
+        ('Service','" . $id . "',1,1,'Service',1),
+        ('Sales','" . $id . "',0,0,'Sales',1),
+        ('Audit','" . $id . "',2,2,'Audit',1)";
+    mysql_query($sql);
+
+</code></pre>
+
+<p>Finally The response output to android app is as follows.</p>
+<pre class="highlight plaintext"><code>// Successful
+$output = "1Registration Successful! Sign in using your new account to finish the rest of the setup.";
+
+// Failure
+$output = "0Email address is already registered.";
+
+</code></pre>
+
+<h2 id="sign-in">Sign In</h2>
+
+<p><code class="prettyprint">URL https://testsite.cloudmanagerpro.com/AndroidGP/downloadContractorInfo.php</code></p>
+
+<blockquote>
+<p>Data Sent</p>
+</blockquote>
+<pre class="highlight plaintext"><code>year=jimbob%40bobbbbbbbburgerss.com%7CJF%7Cdbz95uov&amp;SID=unknown&amp;REGID=APA91bG31Q6yg7eknY6dBb2XY4PWS-0aueFz0kfoxCphcp5NYAsc_z0PNWUpiwbz-fE01mOMMksLD0rmMMNu8EtFt1pzr-dUqOHfxH-LAyPclYEmUvHAR3miE5T3s2i_EGKhkQ30-Sai
+</code></pre>
+
+<blockquote>
+<p>Data Received</p>
+</blockquote>
+<pre class="highlight plaintext"><code>[
+  {
+    "IntContNum": "988",
+    "EntityMaster": "0",
+    "ContractorStatus": "",
+    "ContBusNam": "Jim",
+    "DBAName": "",
+    "ContAddr": "3444 Anderson Road",
+    "ContAddrTwo": "",
+    "ContCity": "Somewhere",
+    "ContState": "MA",
+    "ContZip": "55555",
+    "ContPhone": "555-555-5555",
+    "ContMobile": "",
+    "ContEmail": "",
+    "ContFax": "555-222-2222",
+    "WebSite": "www.website.com",
+    "lat": "",
+    "lng": "",
+    "CorpLogo": "png",
+    "LogoBlob": "iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAIAAABEtEjdAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAKUVJREFUeNrsnQl320bWYEkCBBeQlGgpduzE7Rz3lzPz/3/PTKbdTpzYkURxATeQ1DwRabUiiSR21HJvp92K25bIKuDy4dWrV/W7u7saAACYRYMhAABA7gAAgNwBAAC5AwBALrgMAWjB9p7dX1/sttFvrtfhwx+42+3CzSbjT2m6br3x34jH85rRF07DEe6/2H/FdID61KmWAdUM/vBLZPP1eq3gS/U878H10S94H5A7wF8eX4fru92dRNyRyw14X5Hm908Ada/pYXxA7mCFyjfhvcez50/0QlzvNl2xPLoH5A7a23y9Dre7+183YbjjMntEo153m03Pa95L33VxPSB3UBe5kNb3It9g8yyu9zyvXq8zJoDcofrwPEq22JZpKY4oh+OJ7b0mQT0gdyhb6PdZFyOWQFXmPk0vmkf0gNyhCKKUi9h8uVoh9ApF3261vL3pSd0Acof0bO4T6Ovlaq1mpbnNiN/b4nnPc132IQJyh3isViuCdL3C+dY+omc0ALnDy05f7v9LoYuONOr1VrsViZ7RAOQOOB3LA3IHnA5YHpA7KMhms1kslovFAqdbZfnOPW1WX5E7mMZ2u5UwPZgvWCO1Gcdx/G5HAnlK5pE7aI84XUL15WrFUMAD7VZLAnnSNcgdtAzVRemidUJ1OBLIi+I77TaBPHIHQnUgkAfkDiUi87hYLMiqQ.....",
+    "DateCreated": "2016-04-19 15:35:59",
+    "ProgramID": "0",
+    "UserID": "988",
+    "CompanyMoto": "",
+    "UseDBA": "0",
+    "DTELogo": "",
+    "ContContactFirst": "",
+    "ContContactLast": "",
+    "Terms": "",
+    "Footer": "",
+    "ContDateCreated": "2016-04-19 15:35:59",
+    "IsTrial": "0",
+    "FinancingTerms": "0",
+    "FinancingRate": "0.000",
+    "AccountType": "9",
+    "LatestVersion": "4.0.2",
+    "FooterLogo": "",
+    "FooterExt": "",
+    "TrialExpires": "20160521"
+  }
+]
+
+</code></pre>
+
+<h2 id="syncrights">SyncRights</h2>
+
+<p><code class="prettyprint">URL https://testsite.cloudmanagerpro.com/AndroidGP/syncRights.php</code></p>
+
+<blockquote>
+<p>Data Sent</p>
+</blockquote>
+<pre class="highlight plaintext"><code>?year=jimbob%40bobbbbbbbburgerss.com%7CJF%7Cdbz95uov&amp;SID=unknown&amp;CustCount=1&amp;CustIncrement=19&amp;VersionNum=8.0.4-debug
+</code></pre>
+
+<blockquote>
+<p>Data Received</p>
+</blockquote>
+<pre class="highlight plaintext"><code>[
+  {
+    "Title": "Sample - Condition",
+    "Description": "This is the existing condition of your ______",
+    "AutoIncre": "657"
+  },
+  {
+    "Title": "Sample - Options",
+    "Description": "These are the available options to choose from",
+    "AutoIncre": "658"
+  }
+]
+</code></pre>
+
+<h2 id="sync-schedule">Sync Schedule</h2>
+
+<p><code class="prettyprint">URL: https://testsite.cloudmanagerpro.com/AndroidGP/syncSchedule.php</code></p>
+
+<blockquote>
+<p>Data Sent</p>
+</blockquote>
+<pre class="highlight plaintext"><code>year=jimbob%40bobbbbbbbburgerss.com%7CJF%7Cdbz95uov&amp;SID=unknown 
+</code></pre>
+
+<blockquote>
+<p>Data Recieved</p>
+</blockquote>
+<pre class="highlight plaintext"><code>None yet
+</code></pre>
+
+<h2 id="download-headings">Download Headings</h2>
+
+<p><code class="prettyprint">URL: https://testsite.cloudmanagerpro.com/AndroidGP/downloadHeadings.php</code></p>
+
+<blockquote>
+<p>Data Sent</p>
+</blockquote>
+<pre class="highlight plaintext"><code>?year=jimbob%40bobbbbbbbburgerss.com%7CJF%7Cdbz95uov&amp;SID=unknown&amp;date=0&amp;sync=1
+</code></pre>
+
+<blockquote>
+<p>Data Recieved</p>
+</blockquote>
+<pre class="highlight plaintext"><code>[
+  {
+    "Utility_Service_Detail_ID": "3469",
+    "IntContNum": "1728",
+    "Utility_Service_ID": "0",
+    "ProgramID": "0",
+    "Utility_Service_Description": "Sample Roofing Heading",
+    "Utility_ListArray": "",
+    "Utility_U_Value": "0.0000",
+    "Utility_AreaCalcUnits": "",
+    "Utility_PreValues": "",
+    "Utility_PostValue": "",
+    "Utility_Days_Use_Avg": "0",
+    "Utility_Correction_Factor": "0.00",
+    "Utility_MBTU": "0",
+    "Utility_Life": "0",
+    "PlaceOnSow": "",
+    "Type": "0",
+    "LastUpdated": "2016-04-19 15:35:59"
+  },
+  {
+    "Utility_Service_Detail_ID": "3470",
+    "IntContNum": "1728",
+    "Utility_Service_ID": "0",
+    "ProgramID": "0",
+    "Utility_Service_Description": "Sample Flooring Heading",
+    "Utility_ListArray": "",
+    "Utility_U_Value": "0.0000",
+    "Utility_AreaCalcUnits": "",
+    "Utility_PreValues": "",
+    "Utility_PostValue": "",
+    "Utility_Days_Use_Avg": "0",
+    "Utility_Correction_Factor": "0.00",
+    "Utility_MBTU": "0",
+    "Utility_Life": "0",
+    "PlaceOnSow": "",
+    "Type": "0",
+    "LastUpdated": "2016-04-19 15:35:59"
+  },
+  {
+    "Utility_Service_Detail_ID": "3471",
+    "IntContNum": "1728",
+    "Utility_Service_ID": "0",
+    "ProgramID": "0",
+    "Utility_Service_Description": "Sample Landscaping Heading",
+    "Utility_ListArray": "",
+    "Utility_U_Value": "0.0000",
+    "Utility_AreaCalcUnits": "",
+    "Utility_PreValues": "",
+    "Utility_PostValue": "",
+    "Utility_Days_Use_Avg": "0",
+    "Utility_Correction_Factor": "0.00",
+    "Utility_MBTU": "0",
+    "Utility_Life": "0",
+    "PlaceOnSow": "",
+    "Type": "0",
+    "LastUpdated": "2016-04-19 15:35:59"
+  }
+]
+
+</code></pre>
+
+<h2 id="download-terms">Download Terms</h2>
+
+<p><code class="prettyprint">URL: https://testsite.cloudmanagerpro.com/AndroidGP/downloadTerms.php</code></p>
+
+<blockquote>
+<p>Data Sent</p>
+</blockquote>
+<pre class="highlight plaintext"><code>?year=jimbob%40bobbbbbbbburgerss.com%7CJF%7Cdbz95uov&amp;SID=unknown
+</code></pre>
+
+<blockquote>
+<p>Data Recieved</p>
+</blockquote>
+<pre class="highlight plaintext"><code>[
+  {
+    "TermsID": "535",
+    "EntityMaster": "0",
+    "IntContNum": "1728",
+    "ContBusNam": "",
+    "DBAName": "",
+    "DateCreated": "2016-04-19 15:35:59",
+    "ProgramID": "0",
+    "UserID": "0",
+    "UseDBA": "0",
+    "TermsNote": "&lt;font face=\"arial\" size=\"2\"&gt;&lt;b&gt;&lt;font size=\"3\"&gt;&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;\n\n&lt;p class=\"MsoNormal\" style=\"margin-top:3.4pt;margin-right:-1.0pt;margin-bottom:\n0in;margin-left:5.1pt;margin-bottom:.0001pt;line-height:normal\"&gt;&lt;b style=\"mso-bidi-font-weight:normal\"&gt;Terms and Conditions &lt;/b&gt;&lt;/p&gt;\n\n&lt;p class=\"MsoNormal\" style=\"margin-top:.95pt;margin-right:0in;margin-bottom:0in;\nmargin-left:0in;margin-bottom:.0001pt;line-height:10.0pt;mso-line-height-rule:\nexactly\"&gt;&lt;a name=\"_GoBack\"&gt;&lt;/a&gt;&amp;nbsp;&lt;/p&gt;\n\n&lt;p class=\"MsoNormal\" style=\"margin-top:0in;margin-right:2.95pt;margin-bottom:\n0in;margin-left:5.1pt;margin-bottom:.0001pt;line-height:\n100%\"&gt;&lt;b style=\"mso-bidi-font-weight:normal\"&gt;Scope of Work:&lt;/b&gt; &amp;nbsp;Company will provide to Homeowner the services as described in the attached\nproposal which is hereby incorporated into this Contract\nas reference. &amp;nbsp;Company will provide all services, materials, labor, tools, and equipment\nneeded for completion of services in the\nquote at the previously listed address. All services will be in\ncompliance with local codes and company agrees to provide\nprofessional quality services\naccording to acceptable industry\nstandards and practices.&lt;/p&gt;\n\n&lt;p class=\"MsoNormal\" style=\"margin-top:.05pt;margin-right:0in;margin-bottom:0in;\nmargin-left:0in;margin-bottom:.0001pt;line-height:11.0pt;mso-line-height-rule:\nexactly\"&gt;&amp;nbsp;&lt;/p&gt;\n\n&lt;p class=\"MsoNormal\" style=\"margin-top:0in;margin-right:3.3pt;margin-bottom:0in;\nmargin-left:5.1pt;margin-bottom:.0001pt;text-indent:.25pt;line-height:100%\"&gt;&lt;b style=\"mso-bidi-font-weight:normal\"&gt;Payment Terms:&lt;/b&gt; &amp;nbsp;Receipt of a 50% down payment\nis due upon signing of quote acceptance and prior to final\nscheduling for project initiation. The balance of the contract\nis due the day of final contract\ncompletion. &amp;nbsp;If for any reason, the project is delayed beyond the control\nof the company due to unforeseen issues\nwith the home, natural disasters, or homeowner circumstances the homeowner agrees to pay\ncompany for the work completed until a new schedule is agreed upon by\nboth parties.&lt;/p&gt;\n\n&lt;p class=\"MsoNormal\" style=\"margin-top:.1pt;margin-right:0in;margin-bottom:0in;\nmargin-left:0in;margin-bottom:.0001pt;line-height:11.0pt;mso-line-height-rule:\nexactly\"&gt;&amp;nbsp;&lt;/p&gt;\n\n&lt;p class=\"MsoNormal\" style=\"margin-top:0in;margin-right:16.7pt;margin-bottom:\n0in;margin-left:5.35pt;margin-bottom:.0001pt;line-height:100%\"&gt;&lt;b style=\"mso-bidi-font-weight:normal\"&gt;Change Order:&lt;/b&gt; &amp;nbsp;Any deviation from the\nabove Scope of Work involving a change in the scope of work or any additional costs will be executed only with\na written change order signed and dated by\nboth the Company and\nhomeowner.&lt;/p&gt;\n\n&lt;p class=\"MsoNormal\" style=\"margin-top:.05pt;margin-right:0in;margin-bottom:0in;\nmargin-left:0in;margin-bottom:.0001pt;line-height:11.0pt;mso-line-height-rule:\nexactly\"&gt;&amp;nbsp;&lt;/p&gt;\n\n&lt;p class=\"MsoNormal\" style=\"margin-top:0in;margin-right:-1.0pt;margin-bottom:\n0in;margin-left:5.35pt;margin-bottom:.0001pt;line-height:normal\"&gt;&lt;b style=\"mso-bidi-font-weight:normal\"&gt;Other Terms:&lt;/b&gt; &amp;nbsp;Homeowners who elect to use a financing\noption are still 100% responsible for payments to company. Payment is the responsibility of the homeowner and is due upon work completion.&lt;/p&gt;\n\n&lt;p class=\"MsoNormal\" style=\"margin-top:.15pt;margin-right:0in;margin-bottom:0in;\nmargin-left:0in;margin-bottom:.0001pt;line-height:11.0pt;mso-line-height-rule:\nexactly\"&gt;&amp;nbsp;&lt;/p&gt;\n\n&lt;p class=\"MsoNormal\" style=\"margin-top:0in;margin-right:5.65pt;margin-bottom:\n0in;margin-left:5.35pt;margin-bottom:.0001pt;text-indent:-.25pt;line-height:\n100%\"&gt;&lt;b style=\"mso-bidi-font-weight:normal\"&gt;Warranty:&lt;/b&gt; Company warrants all work will be performed in a good and workmanlike manner. All materials\nused in the project\nwill be new and of good\nquality; and all work will be\ncompleted as defined in scope of work outlined\nin the proposal acceptance. Any warranties for parts\nor materials are subject to specific manufacturer terms on such\nproducts.&lt;/p&gt;\n\n&lt;p class=\"MsoNormal\" style=\"margin-top:.05pt;margin-right:0in;margin-bottom:0in;\nmargin-left:0in;margin-bottom:.0001pt;line-height:11.0pt;mso-line-height-rule:\nexactly\"&gt;&amp;nbsp;&lt;/p&gt;\n\n&lt;p class=\"MsoNormal\" style=\"margin-top:0in;margin-right:39.3pt;margin-bottom:\n0in;margin-left:5.6pt;margin-bottom:.0001pt;line-height:100%\"&gt;&lt;b style=\"mso-bidi-font-weight:normal\"&gt;Conditions:&lt;/b&gt; This proposal is valid for 30 days.\nCompany reserves the right to withdraw this proposal or re-quote the project if contract acceptance is beyond 30 days.&lt;/p&gt;\n\n&lt;p class=\"MsoNormal\" style=\"margin-top:.2pt;margin-right:0in;margin-bottom:0in;\nmargin-left:0in;margin-bottom:.0001pt;line-height:13.0pt;mso-line-height-rule:\nexactly\"&gt;&amp;nbsp;&lt;/p&gt;\n\n&lt;p class=\"MsoNormal\" style=\"margin-top:0in;margin-right:-1.0pt;margin-bottom:\n0in;margin-left:5.1pt;margin-bottom:.0001pt;line-height:normal\"&gt;Authorized Signature: __________________________________________&lt;/p&gt;\n\n&lt;p class=\"MsoNormal\" style=\"margin-top:.5pt;margin-right:0in;margin-bottom:0in;\nmargin-left:0in;margin-bottom:.0001pt;line-height:8.5pt;mso-line-height-rule:\nexactly\"&gt;&amp;nbsp;&lt;/p&gt;\n\n&lt;p class=\"MsoNormal\" style=\"margin-top:0in;margin-right:.45in;margin-bottom:0in;\nmargin-left:5.6pt;margin-bottom:.0001pt;text-indent:-.25pt;line-height:100%\"&gt;The above prices, specifications, and conditions are satisfactory and are hereby accepted. Company\nis authorized to do the work as specified. A 50% deposit\nis required at time\nof signing and balance is due at\ncompletion of job. The signature on this contract is evidence of Homeowner's acceptance of all terms and conditions within.&lt;br /&gt;&lt;/p&gt;\n\n&lt;p class=\"MsoNormal\" style=\"margin-bottom:0in;margin-bottom:.0001pt;line-height:\n10.0pt;mso-line-height-rule:exactly\"&gt;Acceptance Date:&lt;br /&gt;\n&lt;/p&gt;&lt;p class=\"MsoNormal\" style=\"margin-bottom:0in;margin-bottom:.0001pt;line-height:\n10.0pt;mso-line-height-rule:exactly\"&gt;________________________________&lt;br /&gt;\n&lt;/p&gt;&lt;p class=\"MsoNormal\" style=\"margin-bottom:0in;margin-bottom:.0001pt;line-height:\n10.0pt;mso-line-height-rule:exactly\"&gt;Print Name:&lt;br /&gt;\n&lt;/p&gt;&lt;p class=\"MsoNormal\" style=\"margin-bottom:0in;margin-bottom:.0001pt;line-height:\n10.0pt;mso-line-height-rule:exactly\"&gt;________________________________&lt;br /&gt;\n&lt;/p&gt;&lt;p class=\"MsoNormal\" style=\"margin-bottom:0in;margin-bottom:.0001pt;line-height:\n10.0pt;mso-line-height-rule:exactly\"&gt;Signature:&lt;br /&gt;\n&lt;/p&gt;&lt;p class=\"MsoNormal\" style=\"margin-bottom:0in;margin-bottom:.0001pt;line-height:\n10.0pt;mso-line-height-rule:exactly\"&gt;________________________________&lt;br /&gt;\n&lt;/p&gt;&lt;p class=\"MsoNormal\" style=\"margin-bottom:0in;margin-bottom:.0001pt;line-height:\n10.0pt;mso-line-height-rule:exactly\"&gt;&lt;br&gt;&lt;/p&gt;&lt;p class=\"MsoNormal\" style=\"margin-top:0in;margin-right:11.6pt;margin-bottom:\n0in;margin-left:5.85pt;margin-bottom:.0001pt;text-indent:-.25pt;line-height:\n100%\"&gt;Thank you for allowing our company\nto be a part of your home improvement project. &amp;nbsp;If you\nhave any additional questions or concerns, please contact us directly.&lt;/p&gt;",
+    "TermCode": "QuotationTerms",
+    "SetupType": "",
+    "IsDefault": "0"
+  }
+]
+
+</code></pre>
+
+<h2 id="download-material-list">Download Material List</h2>
+
+<p><code class="prettyprint">URL: https://testsite.cloudmanagerpro.com/AndroidGP/downloadMaterialList.php</code></p>
+
+<blockquote>
+<p>Data Sent</p>
+</blockquote>
+<pre class="highlight plaintext"><code>?year=jimbob%40bobbbbbbbburgerss.com%7CJF%7Cdbz95uov&amp;SID=unknown&amp;date=1461089006&amp;startingRow=0&amp;sync=1
+</code></pre>
+
+<blockquote>
+<p>Data Recieved</p>
+</blockquote>
+<pre class="highlight plaintext"><code>null for now need to update 
+</code></pre>
+
+<h2 id="downlload-inspection-types">Downlload Inspection Types</h2>
+
+<p><code class="prettyprint">URL: https://testsite.cloudmanagerpro.com/AndroidGP/downloadInspectionTypes.php</code></p>
+
+<blockquote>
+<p>Data Sent</p>
+</blockquote>
+<pre class="highlight plaintext"><code>year=jimbob%40bobbbbbbbburgerss.com%7CJF%7Cdbz95uov&amp;SID=unknown
+</code></pre>
+
+<blockquote>
+<p>Data Recieved</p>
+</blockquote>
+<pre class="highlight plaintext"><code>[
+  {
+    "InspectionType": "0",
+    "InspectionName": "Sales",
+    "SweepID": "0"
+  },
+  {
+    "InspectionType": "1",
+    "InspectionName": "Service",
+    "SweepID": "0"
+  },
+  {
+    "InspectionType": "2",
+    "InspectionName": "Audit",
+    "SweepID": "0"
+  }
+]
+</code></pre>
+
+<h2 id="download-contractor-tax">Download Contractor Tax</h2>
+
+<p><code class="prettyprint">URL: https://testsite.cloudmanagerpro.com/AndroidGP/downloadContractorTax.php</code></p>
+
+<blockquote>
+<p>Data Sent </p>
+</blockquote>
+<pre class="highlight plaintext"><code>?year=jimbob%40bobbbbbbbburgerss.com%7CJF%7Cdbz95uov&amp;SID=unknown&amp;date=0&amp;sync=1
+</code></pre>
+
+<blockquote>
+<p>Data Received</p>
+</blockquote>
+<pre class="highlight plaintext"><code>[
+  {
+    "AutoIncre": "193",
+    "IntContNum": "1728",
+    "TaxName": "Mich",
+    "TaxRate": "6.0",
+    "LastUpdated": "2016-04-21 14:57:34"
+  }
+]
+</code></pre>
+
+<h3 id="sync-contractor-info">Sync Contractor Info</h3>
+
+<p><code class="prettyprint">URL https://testsite.cloudmanagerpro.com/AndroidGP/syncContInfo.php</code></p>
+
+<blockquote>
+<p>Data Sent</p>
+</blockquote>
+<pre class="highlight plaintext"><code>year=jimbob%40bobbbbbbbburgerss.com%7CJF%7Cdbz95uov&amp;SID=unknown&amp;Date=1461264709&amp;CurrentTime=1461264733&amp;BusName=Jim&amp;Address=3444%20Anderson%20Road&amp;City=Somewhere&amp;State=MA&amp;Zip=55555&amp;Phone=555-555-5555&amp;Fax=555-222-2222&amp;Website=www.website.com&amp;Motto=&amp;ContContactFirst=&amp;ContContactLast=&amp;ContEmail=&amp;FinanceTerms=0&amp;FinanceRate=0.000
+</code></pre>
+
+<blockquote>
+<p>Data Received</p>
+</blockquote>
+<pre class="highlight plaintext"><code>EMPTY RESPONSE
+</code></pre>
+
+<h3 id="sync-deleted-items">Sync Deleted Items</h3>
+
+<p><code class="prettyprint">URL: https://testsite.cloudmanagerpro.com/AndroidGP/syncDeletedItems.php</code></p>
+
+<blockquote>
+<p>Data Sent</p>
+</blockquote>
+<pre class="highlight plaintext"><code>year=jimbob%40bobbbbbbbburgerss.com%7CJF%7Cdbz95uov&amp;SID=unknown&amp;send=1&amp;CurrentTime=1461264886&amp;Date=0
+</code></pre>
+
+<blockquote>
+<p>Data Recieved</p>
+</blockquote>
+<pre class="highlight plaintext"><code>null atm
+
+</code></pre>
+
+<h3 id="sync-taxes">Sync Taxes</h3>
+
+<p><code class="prettyprint">URL https://testsite.cloudmanagerpro.com/AndroidGP/syncTaxes.php</code></p>
+
+<blockquote>
+<p>Data Sent</p>
+</blockquote>
+<pre class="highlight plaintext"><code>year=jimbob%40bobbbbbbbburgerss.com%7CJF%7Cdbz95uov&amp;SID=unknown&amp;CurrentTime=1461264953&amp;Date=1461264867&amp;ID=0&amp;Name=Mich&amp;Rate=6.0
+</code></pre>
+
+<blockquote>
+<p>Data Received</p>
+</blockquote>
+<pre class="highlight plaintext"><code>193
+</code></pre>
+
+          <h1 id="errors">Errors</h1>
+
+<h2 id="legacy-android">Legacy Android</h2>
+
+<h3 id="api">API</h3>
+
+<p>None;</p>
+
+<h2 id="cmp">CMP</h2>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request &ndash; Your request sucks</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized &ndash; Your API key is wrong</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden &ndash; The kitten requested is hidden for administrators only</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found &ndash; The specified kitten could not be found</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed &ndash; You tried to access a kitten with an invalid method</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone &ndash; The kitten requested has been removed from our servers</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&rsquo;m a teapot</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests &ndash; You&rsquo;re requesting too many kittens! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
