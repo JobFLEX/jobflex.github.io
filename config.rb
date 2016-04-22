@@ -34,7 +34,8 @@ set :relative_links, true
 
 
 activate :deploy do |deploy|
-  deploy.deploy_method   = :git
+  deploy.method = :git
+  deploy.build_before = true # default: false
 end
 
 
